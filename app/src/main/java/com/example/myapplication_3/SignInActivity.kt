@@ -4,8 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.codingstuff.loginandsignup.databinding.ActivitySignInBinding
+import com.example.myapplication_3.databinding.ActivitySignInBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.example.myapplication_3.MainActivity
+
+
 
 class SignInActivity : AppCompatActivity() {
 
@@ -40,7 +43,7 @@ class SignInActivity : AppCompatActivity() {
                     }
                 }
             } else {
-                Toast.makeText(this, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "I campi vuoti non sono ammessi!!", Toast.LENGTH_SHORT).show()
 
             }
         }

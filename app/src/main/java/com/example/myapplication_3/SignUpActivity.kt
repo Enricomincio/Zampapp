@@ -4,8 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.codingstuff.loginandsignup.databinding.ActivitySignUpBinding
+import com.example.myapplication_3.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.example.myapplication_3.MainActivity
+
 
 class SignUpActivity : AppCompatActivity() {
 
@@ -42,10 +44,10 @@ class SignUpActivity : AppCompatActivity() {
                         }
                     }
                 } else {
-                    Toast.makeText(this, "Password is not matching", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Le Password non corrispondono dioporco", Toast.LENGTH_SHORT).show()
                 }
             } else {
-                Toast.makeText(this, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "I campi vuoti non sono ammessi!!", Toast.LENGTH_SHORT).show()
 
             }
         }
