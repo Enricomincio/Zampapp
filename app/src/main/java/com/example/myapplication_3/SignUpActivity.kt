@@ -1,4 +1,4 @@
-package com.codingstuff.loginandsignup
+package com.example.myapplication_3
 
 import android.content.Intent
 import android.os.Bundle
