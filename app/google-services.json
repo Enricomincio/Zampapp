@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "596502022411",
+    "project_id": "zampapp-987f8",
+    "storage_bucket": "zampapp-987f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:596502022411:android:20cac0e9f592caf0d9fa0e",
+        "android_client_info": {
+          "package_name": "com.example.myapplication_3"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0-MdVyWE1mi6ZCuAEgYjZNd8B4XUsyHM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

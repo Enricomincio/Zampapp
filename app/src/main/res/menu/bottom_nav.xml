@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home"
+        android:id="@+id/home"
+        android:icon="@drawable/cuccia_icon"/>
+
+    <item android:title="Dona"
+        android:id="@+id/regalo"
+        android:icon="@drawable/regalo"/>
+
+
+    <item android:title="Adotta"
+        android:id="@+id/cane"
+        android:icon="@drawable/cane_cuori"/>
+
+    <item android:title="Sos"
+        android:id="@+id/sos"
+        android:icon="@drawable/sos"/>
+
+    <item android:title="Profilo"
+        android:id="@+id/profilo"
+        android:icon="@drawable/baseline_person_24"/>
+</menu>
