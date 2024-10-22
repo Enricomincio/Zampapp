@@ -40,7 +40,7 @@ class ResPassActivity : AppCompatActivity() {
 
         }
         btnSignIn = findViewById(R.id.button1)
-            btnSignIn.setOnClickListener {
+            btnSignIn.setOnClickListener() {
                 val intent = Intent(this,SignInActivity::class.java)
                 startActivity(intent)
     }
