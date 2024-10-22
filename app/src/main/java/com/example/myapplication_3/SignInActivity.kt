@@ -23,7 +23,7 @@ class SignInActivity : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
         binding.textView.setOnClickListener {
-            val intent = Intent(this, SignUpActivity::class.java)
+            val intent = Intent(this, SceltaSUpActivity::class.java)
             startActivity(intent)
         }
 

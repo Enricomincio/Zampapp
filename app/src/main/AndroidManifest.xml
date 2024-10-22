@@ -29,6 +29,7 @@
             android:exported="true">
         </activity>
         <activity android:name=".ResPassActivity" android:exported="true" />
+        <activity android:name=".SceltaSUpActivity" android:exported="true" />
     </application>
 
 </manifest>
