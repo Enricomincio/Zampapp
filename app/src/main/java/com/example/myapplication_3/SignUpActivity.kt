@@ -27,11 +27,13 @@ class SignUpActivity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.button.setOnClickListener {
+            val nome = binding.nomeEt.text.toString()
+            val cognome = binding.cognomeEt.text.toString()
             val email = binding.emailEt.text.toString()
             val pass = binding.passET.text.toString()
             val confirmPass = binding.confirmPassEt.text.toString()
 
-            if (email.isNotEmpty() && pass.isNotEmpty() && confirmPass.isNotEmpty()) {
+            if (nome.isNotEmpty() && cognome.isNotEmpty() && email.isNotEmpty() && pass.isNotEmpty() && confirmPass.isNotEmpty()) {
                 if (pass == confirmPass) {
 
                     firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
@@ -44,10 +46,10 @@ class SignUpActivity : AppCompatActivity() {
                         }
                     }
                 } else {
-                    Toast.makeText(this, "Le Password non corrispondono dioporco", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Le Password non corrispondono!", Toast.LENGTH_SHORT).show()
                 }
             } else {
-                Toast.makeText(this, "I campi vuoti non sono ammessi!!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "I campi vuoti non sono ammessi!", Toast.LENGTH_SHORT).show()
 
             }
         }
