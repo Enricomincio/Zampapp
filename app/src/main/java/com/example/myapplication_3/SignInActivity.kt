@@ -47,11 +47,16 @@ class SignInActivity : AppCompatActivity() {
 
             }
         }
+        firebaseAuth = FirebaseAuth.getInstance()
+        binding.textView5.setOnClickListener {
+            val intent = Intent(this, ResPassActivity::class.java)
+            startActivity(intent)
+        }
     }
+
 
     override fun onStart() {
         super.onStart()
-
         if(firebaseAuth.currentUser != null){
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
