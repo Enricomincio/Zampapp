@@ -66,6 +66,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/rubik_medium"
                 android:text="Reset Password"
+                android:textColor="@color/black"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
