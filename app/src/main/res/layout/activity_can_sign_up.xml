@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/ble"
-    tools:context=".SignUpActivity">
+    tools:context=".CanSignUpActivity">
 
     <!-- Logo -->
     <ImageView
@@ -99,49 +99,7 @@
                             style="@style/LoginTextInputInnerFieldStyle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Nome" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-
-                    <!-- Cognome -->
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/cognomeLayout"
-                        style="@style/LoginTextInputOuterFieldStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginEnd="16dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/nomeLayout">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/cognomeEt"
-                            style="@style/LoginTextInputInnerFieldStyle"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Cognome" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-
-                    <!-- Username -->
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/usernameLayout"
-                        style="@style/LoginTextInputOuterFieldStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginEnd="16dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/cognomeLayout">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/usernameEt"
-                            style="@style/LoginTextInputInnerFieldStyle"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Username" />
+                            android:hint="Nome canile" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <!-- Numero di Telefono -->
@@ -154,7 +112,7 @@
                         android:layout_marginEnd="16dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/usernameLayout">
+                        app:layout_constraintTop_toBottomOf="@+id/nomeLayout">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/telefonoEt"

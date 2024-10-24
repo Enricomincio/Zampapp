@@ -36,7 +36,7 @@ class SceltaSUpActivity : AppCompatActivity() {
             startActivity(intent)
         }
         btnCanile.setOnClickListener(){
-            val intent = Intent(this,SignUpActivity::class.java)
+            val intent = Intent(this,CanSignUpActivity::class.java)
             startActivity(intent)
         }
     }

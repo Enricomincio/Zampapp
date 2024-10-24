@@ -3,18 +3,18 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myapplication_3.databinding.ActivitySignUpBinding
+import com.example.myapplication_3.databinding.ActivityCanSignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 
-class SignUpActivity : AppCompatActivity() {
+class CanSignUpActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivitySignUpBinding
+    private lateinit var binding: ActivityCanSignUpBinding
     private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivitySignUpBinding.inflate(layoutInflater)
+        binding = ActivityCanSignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         firebaseAuth = FirebaseAuth.getInstance()
@@ -25,9 +25,7 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         binding.button.setOnClickListener {
-            val nome = binding.nomeEt.text.toString()
-            val cognome = binding.nomeEt.text.toString()
-            val username = binding.nomeEt.text.toString()
+            val nomeCanile = binding.nomeEt.text.toString()
             val telefono = binding.telefonoEt.text.toString()
             val email = binding.emailEt.text.toString()
             val paese = binding.paeseEt.text.toString()
@@ -38,7 +36,7 @@ class SignUpActivity : AppCompatActivity() {
             val password = binding.passwordEt.text.toString()
             val confermaPassword = binding.confermaPasswordEt.text.toString()
 
-            if (nome.isNotEmpty() && cognome.isNotEmpty() && username.isNotEmpty() && telefono.isNotEmpty() && email.isNotEmpty() && paese.isNotEmpty() &&
+            if (nomeCanile.isNotEmpty() && telefono.isNotEmpty() && email.isNotEmpty() && paese.isNotEmpty() &&
                 provincia.isNotEmpty() && citta.isNotEmpty() && cap.isNotEmpty() && via.isNotEmpty() &&
                 password.isNotEmpty() && confermaPassword.isNotEmpty()) {
 
