@@ -1,4 +1,6 @@
 [versions]
+glide = "4.12.0"
+androidsvg = "1.4"
 agp = "8.3.0"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
@@ -14,6 +16,9 @@ firebaseAuth = "23.0.0"
 firebaseFirestore = "25.1.1"
 
 [libraries]
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+glideOkhttp3 = { group = "com.github.bumptech.glide", name = "okhttp3-integration", version.ref = "glide" }
+androidsvg = { group = "com.caverock", name = "androidsvg", version.ref = "androidsvg" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }

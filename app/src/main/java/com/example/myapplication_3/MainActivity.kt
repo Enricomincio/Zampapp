@@ -17,8 +17,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         replaceFragment(Home())
+
+        binding.logoImageView.setOnClickListener {
+            // Torna alla Home quando clicchi sul logo
+            binding.bottomNavigationView.selectedItemId = R.id.home
+        }
 
         binding.bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId){
@@ -34,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
                 }
             }
-                true
+            true
 
         }
 
