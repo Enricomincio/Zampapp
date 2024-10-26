@@ -1,25 +1,25 @@
 package com.example.myapplication_3
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication_3.SignInActivity
 import com.example.myapplication_3.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
-import androidx.appcompat.app.AppCompatDelegate
+import com.google.firebase.firestore.FirebaseFirestore
 
 class SignUpActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignUpBinding
     private lateinit var firebaseAuth: FirebaseAuth
+    private val db = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO) // Modalità notte no
-
 
         firebaseAuth = FirebaseAuth.getInstance()
 
@@ -30,8 +30,8 @@ class SignUpActivity : AppCompatActivity() {
 
         binding.button.setOnClickListener {
             val nome = binding.nomeEt.text.toString()
-            val cognome = binding.nomeEt.text.toString()
-            val username = binding.nomeEt.text.toString()
+            val cognome = binding.cognomeEt.text.toString()
+            val username = binding.usernameEt.text.toString()
             val telefono = binding.telefonoEt.text.toString()
             val email = binding.emailEt.text.toString()
             val paese = binding.paeseEt.text.toString()
@@ -42,15 +42,38 @@ class SignUpActivity : AppCompatActivity() {
             val password = binding.passwordEt.text.toString()
             val confermaPassword = binding.confermaPasswordEt.text.toString()
 
-            if (nome.isNotEmpty() && cognome.isNotEmpty() && username.isNotEmpty() && telefono.isNotEmpty() && email.isNotEmpty() && paese.isNotEmpty() &&
-                provincia.isNotEmpty() && citta.isNotEmpty() && cap.isNotEmpty() && via.isNotEmpty() &&
-                password.isNotEmpty() && confermaPassword.isNotEmpty()) {
+            if (nome.isNotEmpty() && cognome.isNotEmpty() && username.isNotEmpty() && telefono.isNotEmpty() &&
+                email.isNotEmpty() && paese.isNotEmpty() && provincia.isNotEmpty() && citta.isNotEmpty() &&
+                cap.isNotEmpty() && via.isNotEmpty() && password.isNotEmpty() && confermaPassword.isNotEmpty()) {
 
                 if (password == confermaPassword) {
                     firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
                         if (it.isSuccessful) {
-                            val intent = Intent(this, SignInActivity::class.java)
-                            startActivity(intent)
+                            // Aggiungi i dati dell'utente a Firestore
+                            val user = hashMapOf(
+                                "nome" to nome,
+                                "cognome" to cognome,
+                                "username" to username,
+                                "telefono" to telefono,
+                                "email" to email,
+                                "paese" to paese,
+                                "provincia" to provincia,
+                                "citta" to citta,
+                                "cap" to cap,
+                                "via" to via
+                            )
+
+                            db.collection("utenti")
+                                .add(user)
+                                .addOnSuccessListener { documentReference ->
+                                    Log.d("SignUpActivity_db", "Utente aggiunto con ID: ${documentReference.id}")
+                                    val intent = Intent(this, SignInActivity::class.java)
+                                    startActivity(intent)
+                                }
+                                .addOnFailureListener { e ->
+                                    Log.w("SignUpActivity_db", "Errore nell'aggiunta dell'utente", e)
+                                    Toast.makeText(this, "Errore nella registrazione dei dati", Toast.LENGTH_SHORT).show()
+                                }
                         } else {
                             Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
                         }

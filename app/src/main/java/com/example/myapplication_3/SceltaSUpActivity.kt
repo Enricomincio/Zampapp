@@ -1,5 +1,7 @@
 package com.example.myapplication_3
 
+import com.example.myapplication_3.SignUpActivity
+
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
