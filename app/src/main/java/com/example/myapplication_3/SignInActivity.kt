@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication_3.databinding.ActivitySignInBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.example.myapplication_3.MainActivity
+import androidx.appcompat.app.AppCompatDelegate
+
 
 
 
@@ -19,6 +21,8 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO) //  Modalità notte no
 
 
         firebaseAuth = FirebaseAuth.getInstance()

@@ -3,6 +3,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.example.myapplication_3.databinding.ActivityCanSignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -13,6 +14,8 @@ class CanSignUpActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO) // Modalità notte no
 
         binding = ActivityCanSignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)

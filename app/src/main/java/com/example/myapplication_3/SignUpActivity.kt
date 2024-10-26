@@ -5,6 +5,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication_3.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
+import androidx.appcompat.app.AppCompatDelegate
 
 class SignUpActivity : AppCompatActivity() {
 
@@ -16,6 +17,9 @@ class SignUpActivity : AppCompatActivity() {
 
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO) // Modalità notte no
+
 
         firebaseAuth = FirebaseAuth.getInstance()
 
